@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { useNavigate } from 'react-router-dom';
 import style from '../scss/style.module.scss';
 
 //임시 로그인 계정
@@ -10,7 +10,7 @@ const userInfo = {
 
 const Login = () => {
     
-    
+    const navigate = useNavigate();
     const useridRef = React.useRef();
     const userpwRef = React.useRef();
     
@@ -30,6 +30,7 @@ const Login = () => {
             alert('로그인 성공')
             localStorage.setItem('id', idvalue);
             localStorage.setItem('pw', pwvalue);
+            navigate('/feed');
         }
         else {
             alert('아이디와 비밀번호가 다릅니다.');
