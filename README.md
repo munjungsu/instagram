@@ -24,7 +24,7 @@ src
 ```
 
 ### 로그인 기능
-useRef()속성으로 input 값의 접근, 임시 로그인 계정정보와 input값의 value가 일치한다면 localStorage에 id,pw 등록한 뒤 useNavigate()속성으로 Feed페이지로 이동하게 하였습니다.
+##### useRef()속성으로 input 값의 접근, 임시 로그인 계정정보와 input값의 value가 일치한다면 localStorage에 id,pw 등록한 뒤 useNavigate()속성으로 Feed페이지로 이동하게 하였습니다.
 -----------
 ```
 //임시 로그인 계정정보
@@ -66,7 +66,7 @@ const handleSubmit = ()=>{
 }
 ```
 ### 로그아웃 기능
-로그아웃 버튼 클릭시 localStorage에 등록했던 id,pw를 지우고 로그인 페이지로 이동하게 하였습니다.
+##### 로그아웃 버튼 클릭시 localStorage에 등록했던 id,pw를 지우고 로그인 페이지로 이동하게 하였습니다.
 ---------
 ```
  const onDelete = ()=>{
@@ -77,7 +77,7 @@ const handleSubmit = ()=>{
 ```
 
 ### 피드
-useEffect()로 페이지가 열리자마자 axios로 user.json데이터를 받아온 뒤 props로 FeedList에 받은 데이터를 보내줍니다.
+##### useEffect()로 페이지가 열리자마자 axios로 user.json데이터를 받아온 뒤 props로 FeedList에 받은 데이터를 보내줍니다.
 ------
 ```
 const Feed = () => {
@@ -102,7 +102,11 @@ const Feed = () => {
 Feed.js에서 props로 받아온 데이터를 map()함수를 사용하여 출력
 --------
 ```
-
+const FeedList = ({user}) => {
+    {user && user.map((v, i)=>(
+        ....
+    ))}
+}
 ```
 
 
