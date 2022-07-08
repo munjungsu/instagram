@@ -22,7 +22,7 @@ const FeedList = ({user}) => {
         <div className={style.main}>
                 
         {user && user.map((v)=>{
-            console.log(addcom);
+            
              return (
                 <article className={style.content} key={v.id}>
                 <ul>

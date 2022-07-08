@@ -18,7 +18,7 @@ const Login = () => {
 
     const [userid, setUserid] = React.useState('');
     const [userpw, setUserpw] = React.useState(''); 
-    const [idValid, setIdValid] = React.useState(false);
+    
 
     const handleSubmit = ()=>{
         const idvalue = useridRef.current.value;
@@ -39,21 +39,8 @@ const Login = () => {
         }
         
     }
-console.log(idValid);
-    //id 유효성 검사
-    const checkId = (e)=>{
-        let regExp = /^[a-zA-z0-9]{4,12}$/;
-        const result = regExp.text(e.target.value);
-        console.log(result);
-        if(!regExp){
-            alert('아이디는 영문대소문자와 4~12자리 숫자여야 합니다.')
-            setIdValid(false);
-        }else{
-            setIdValid(true);
-        }
-        return regExp.text(e.target.value);
-        
-    }
+
+    
     
     return (
         <div className={style.container}>
