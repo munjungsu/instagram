@@ -7,8 +7,6 @@ public
 │   ├── img
 ├── data
 │   └── user.json
-├── logo192.png
-├── logo512.png
 ├── index.html
 src
 ├── Components
