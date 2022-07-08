@@ -1,15 +1,32 @@
+import axios from 'axios';
 import React from 'react';
 import style from '../scss/style.module.scss';
 const FeedList = ({user}) => {
+
+    
+    const inputQuery = React.useRef();
+    const [addcom, setAddCom] = React.useState([]);
+    
+    const handleClick = (e)=>{
+        e.preventDefault();
+        const value = inputQuery.current.value;
+        
+        
+        setAddCom([...addcom, {com : value, localId : localStorage.id}]);
+        console.log(value);
+    }
+    
+    
     return (
+        
         <div className={style.main}>
                 
-        {user && user.map((v, i)=>{
-            
+        {user && user.map((v)=>{
+            console.log(addcom);
              return (
-                <article className={style.content}>
+                <article className={style.content} key={v.id}>
                 <ul>
-                <li key={i} className={style.feed}>
+                <li className={style.feed}>
                     <div className={style.list_top}>
                         <ul>
                             <li>
@@ -38,30 +55,39 @@ const FeedList = ({user}) => {
                         </li>
                     </ul>
                 </div>
-                <div>
-                <a href="#">좋아요 {v.like} 개</a>
+                <div className={style.like}>
+                <span>좋아요 {v.like} 개</span>
                 </div>
                 <div className={style.footer}>
-                   
-                        <div className={style.name}>{v.id}</div>
-                        <div>{v.msg}</div>
+                    <div className={style.id}>
+                        <ul>
+                            <li>{v.id}</li>
+                            
+                        </ul>
+                    </div>
+                    <div className={style.content}>
+                        <ul>
+                            <li>{v.msg}</li>
+                        </ul>
+                    </div>
+
+                        
                     
                 </div>
                <div className={style.coments}>
-                <form>
+                
                     <div className={style.smile}>
                         <img src={process.env.PUBLIC_URL + '/assets/img/smile.png'}></img>
                     </div>
-                        <textarea ariaLabel="댓글 달기..." placeholder="댓글 달기..." className={style.text}></textarea>
-                    <button type="submit" className={style.btn_coments}>게시</button>
-                </form>
+                        <input type="text" name="addcom" className={style.text} ref={inputQuery} placeholder="댓글추가.."/>
+                    <button onClick={handleClick} className={style.btn_coments}>게시</button>
+                
                </div>
                 </li>
                 </ul>
             </article>
             )
          })}
-        
     </div>
     );
 };

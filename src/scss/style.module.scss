@@ -207,9 +207,7 @@ ul {
         width : 600px;
         border-radius: 20px;
         
-        .feed {
-            
-        }
+        
        
         
         background-color:white;
@@ -271,10 +269,27 @@ ul {
         width : 50px;
         height : 50px;
        }
+       .like {
+        font-weight: bold;
+        margin-left: 20px;
+       }
        .footer {
+
         div {
-            display: inline-block;
-            padding : 10px;
+            display : inline-block;
+            box-sizing: border-box;
+            padding:10px;
+        }
+        .id {
+            text-align: center;
+            width :20%;
+            font-weight: bold;
+            
+        }
+        .content {
+            
+            width : 80%;
+            
         }
         .name {
             font-weight: bold;
@@ -295,6 +310,7 @@ ul {
             width : 450px;
             float: left;
             border : none;
+            height: 30px;
         }
         .smile {
            img {

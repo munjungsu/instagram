@@ -51,7 +51,7 @@ console.log(idValid);
         }else{
             setIdValid(true);
         }
-        return result;
+        return regExp.text(e.target.value);
         
     }
     
