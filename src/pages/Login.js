@@ -43,12 +43,15 @@ const Login = () => {
     
     
     return (
+        
         <div className={style.container}>
+            <div>
+            </div>
             <h1>instagram</h1>
             <form onSubmit={handleSubmit}>
                 <section className={style.login_form}>
-                    <input type="text" name="id" id="id" ref={useridRef}  required   placeholder="전화번호, 사용자 이름 또는 이메일"className={style.form_control}/>
-                    <input type="password" name="password" id="password" ref={userpwRef}placeholder="비밀번호" required className={style.form_control}/>
+                    <input type="text" name="id" id="id" ref={useridRef}  required   placeholder="전화번호, 사용자 이름 또는 이메일(mjcah2013)"className={style.form_control}/>
+                    <input type="password" name="password" id="password" ref={userpwRef}placeholder="비밀번호 (1234@)" required className={style.form_control}/>
               
                 
                     <div>
